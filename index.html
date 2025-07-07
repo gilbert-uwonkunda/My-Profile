@@ -69,7 +69,7 @@
         }
 
         .hero-title {
-            font-size: clamp(3rem, 8vw, 8rem);
+            font-size: clamp(2.5rem, 6vw, 5rem);
             font-weight: 900;
             margin-bottom: 1rem;
             background: linear-gradient(45deg, #00ff88, #00d4ff, #ff0080);
@@ -148,7 +148,7 @@
         /* Sections */
         .section {
             min-height: 100vh;
-            padding: 4rem 2rem;
+            padding: 2rem 2rem;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -209,56 +209,235 @@
         /* Experience Timeline */
         .timeline {
             position: relative;
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
         }
 
-        .timeline::after {
-            content: '';
-            position: absolute;
-            width: 4px;
-            background: linear-gradient(to bottom, #00ff88, #00d4ff);
-            top: 0;
-            bottom: 0;
-            left: 50%;
-            margin-left: -2px;
-        }
-
         .timeline-item {
-            padding: 2rem;
+            padding: 0;
             position: relative;
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 15px;
-            margin: 2rem 0;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            transition: all 0.3s ease;
+            background: transparent;
+            border-radius: 0;
+            margin: 3rem 0;
+            transition: all 0.5s ease;
+            opacity: 0;
+            transform: translateX(-50px);
         }
 
-        .timeline-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(0, 255, 136, 0.2);
+        .timeline-item.animate-in {
+            opacity: 1;
+            transform: translateX(0);
         }
 
-        .timeline-item::after {
+        .experience-card {
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 20px;
+            padding: 2.5rem;
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(0, 255, 136, 0.2);
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            transform-style: preserve-3d;
+        }
+
+        .experience-card::before {
             content: '';
             position: absolute;
-            width: 20px;
-            height: 20px;
-            background: #00ff88;
-            border: 4px solid #0a0a0a;
-            top: 2rem;
-            right: -52px;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(0, 255, 136, 0.1), transparent);
+            transition: left 0.8s ease;
+        }
+
+        .experience-card:hover::before {
+            left: 100%;
+        }
+
+        .experience-card:hover {
+            transform: translateY(-15px) rotateX(5deg);
+            box-shadow: 
+                0 30px 60px rgba(0, 255, 136, 0.3),
+                0 0 0 1px rgba(0, 255, 136, 0.4),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1);
+            border-color: rgba(0, 255, 136, 0.6);
+        }
+
+        .job-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+
+        .job-icon {
+            width: 60px;
+            height: 60px;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1.5rem;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #000;
+            animation: pulse-glow 3s ease-in-out infinite;
+            position: relative;
+            overflow: hidden;
+            padding: 8px;
+        }
+
+        .job-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            border-radius: 8px;
+        }
+
+        .job-icon::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transform: rotate(45deg);
+            animation: shine 2s infinite;
+        }
+
+        @keyframes pulse-glow {
+            0%, 100% { 
+                box-shadow: 0 0 20px rgba(0, 255, 136, 0.5);
+                transform: scale(1);
+            }
+            50% { 
+                box-shadow: 0 0 30px rgba(0, 255, 136, 0.8);
+                transform: scale(1.05);
+            }
+        }
+
+        @keyframes shine {
+            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+            100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+        }
+
+        .job-details {
+            flex: 1;
+        }
+
+        .job-title {
+            font-size: 1.6rem;
+            font-weight: 800;
+            color: #fff;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, #00ff88, #00d4ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .company {
+            font-size: 1.2rem;
+            color: #00d4ff;
+            margin-bottom: 0.3rem;
+            font-weight: 600;
+        }
+
+        .duration {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+            padding: 0.3rem 0.8rem;
+            background: rgba(0, 255, 136, 0.1);
+            border-radius: 20px;
+            display: inline-block;
+            border: 1px solid rgba(0, 255, 136, 0.3);
+        }
+
+        .job-description {
+            font-size: 1.05rem;
+            line-height: 1.7;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 1.5rem;
+        }
+
+        .achievements {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .achievement-tag {
+            background: rgba(0, 255, 136, 0.1);
+            border: 1px solid rgba(0, 255, 136, 0.3);
+            color: #00ff88;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .achievement-tag::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(0, 255, 136, 0.2), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .achievement-tag:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 255, 136, 0.3);
+            background: rgba(0, 255, 136, 0.2);
+        }
+
+        .achievement-tag:hover::before {
+            left: 100%;
+        }
+
+        .timeline-connector {
+            position: absolute;
+            left: 30px;
+            top: 80px;
+            bottom: -80px;
+            width: 2px;
+            background: linear-gradient(to bottom, 
+                rgba(0, 255, 136, 0.8), 
+                rgba(0, 212, 255, 0.6), 
+                transparent
+            );
+            z-index: -1;
+        }
+
+        .timeline-item:last-child .timeline-connector {
+            display: none;
+        }
+
+        .experience-number {
+            position: absolute;
+            top: -10px;
+            right: 20px;
+            background: linear-gradient(135deg, #00ff88, #00d4ff);
+            color: #000;
+            width: 30px;
+            height: 30px;
             border-radius: 50%;
-            z-index: 1;
-        }
-
-        .timeline-item:nth-child(even) {
-            margin-left: 50%;
-        }
-
-        .timeline-item:nth-child(even)::after {
-            left: -52px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 0.9rem;
         }
 
         /* Project Cards */
@@ -403,29 +582,12 @@
 
         /* Responsive */
         @media (max-width: 768px) {
-            .timeline::after {
-                left: 2rem;
-            }
-            
-            .timeline-item {
-                margin-left: 0;
-                padding-left: 4rem;
-            }
-            
-            .timeline-item::after {
-                left: 12px;
-            }
-            
-            .timeline-item:nth-child(even) {
-                margin-left: 0;
-            }
-            
-            .timeline-item:nth-child(even)::after {
-                left: 12px;
-            }
-            
             .nav {
                 display: none;
+            }
+            
+            .section {
+                padding: 1.5rem 1rem;
             }
         }
 
@@ -568,24 +730,80 @@
             <h2 class="section-title">Professional Journey</h2>
             <div class="timeline">
                 <div class="timeline-item">
-                    <h3 style="color: #00ff88; font-size: 1.5rem; margin-bottom: 0.5rem;">Senior GIS Specialist</h3>
-                    <h4 style="color: #00d4ff; margin-bottom: 0.5rem;">Esri Rwanda</h4>
-                    <p style="opacity: 0.7; margin-bottom: 1rem;">January 2025 - Present</p>
-                    <p>Leading advanced GIS solutions across East Africa, focusing on emergency response systems and urban planning compliance. Reduced emergency response times by 30% through innovative ambulance dispatch systems.</p>
+                    <div class="timeline-connector"></div>
+                    <div class="experience-card">
+                        <div class="experience-number">1</div>
+                        <div class="job-header">
+                            <div class="job-icon">
+                                <img src="EsriRwanda.png" alt="Esri Logo" />
+                            </div>
+                            <div class="job-details">
+                                <h3 class="job-title">Senior GIS Specialist</h3>
+                                <h4 class="company">Esri Rwanda</h4>
+                                <div class="duration">January 2025 - Present</div>
+                            </div>
+                        </div>
+                        <div class="job-description">
+                            Leading advanced GIS solutions across East Africa, focusing on emergency response systems and urban planning compliance. Spearheading innovative projects that transform spatial data into life-saving solutions.
+                        </div>
+                        <div class="achievements">
+                            <span class="achievement-tag">30% Response Time Reduction</span>
+                            <span class="achievement-tag">Emergency Systems</span>
+                            <span class="achievement-tag">East Africa Lead</span>
+                            <span class="achievement-tag">Urban Planning</span>
+                        </div>
+                    </div>
                 </div>
                 
                 <div class="timeline-item">
-                    <h3 style="color: #00ff88; font-size: 1.5rem; margin-bottom: 0.5rem;">GIS Specialist</h3>
-                    <h4 style="color: #00d4ff; margin-bottom: 0.5rem;">Esri Rwanda</h4>
-                    <p style="opacity: 0.7; margin-bottom: 1rem;">June 2022 - December 2024</p>
-                    <p>Delivered comprehensive GIS solutions for clients across Rwanda, Burundi, and DRC. Specialized in satellite imagery analysis for urban development monitoring and Master Plan compliance.</p>
+                    <div class="timeline-connector"></div>
+                    <div class="experience-card">
+                        <div class="experience-number">2</div>
+                        <div class="job-header">
+                            <div class="job-icon">
+                                <img src="EsriRwanda.png" alt="Esri Logo" />
+                            </div>
+                            <div class="job-details">
+                                <h3 class="job-title">GIS Specialist</h3>
+                                <h4 class="company">Esri Rwanda</h4>
+                                <div class="duration">June 2022 - December 2024</div>
+                            </div>
+                        </div>
+                        <div class="job-description">
+                            Delivered comprehensive GIS solutions for clients across Rwanda, Burundi, and DRC. Specialized in satellite imagery analysis for urban development monitoring and Master Plan compliance using cutting-edge geospatial technologies.
+                        </div>
+                        <div class="achievements">
+                            <span class="achievement-tag">Multi-Country Projects</span>
+                            <span class="achievement-tag">Satellite Imagery</span>
+                            <span class="achievement-tag">Master Plan Compliance</span>
+                            <span class="achievement-tag">ArcGIS Mission Manager</span>
+                        </div>
+                    </div>
                 </div>
                 
                 <div class="timeline-item">
-                    <h3 style="color: #00ff88; font-size: 1.5rem; margin-bottom: 0.5rem;">SDG Coordinator</h3>
-                    <h4 style="color: #00d4ff; margin-bottom: 0.5rem;">SDSN Youth</h4>
-                    <p style="opacity: 0.7; margin-bottom: 1rem;">August 2020 - May 2022</p>
-                    <p>Engaged students in sustainability initiatives, leading climate action campaigns and community-level SDG implementation projects.</p>
+                    <div class="experience-card">
+                        <div class="experience-number">3</div>
+                        <div class="job-header">
+                            <div class="job-icon">
+                                <img src="https://sdsnyouth.org/wp-content/uploads/2018/09/SDSN-Youth-Logo-1.png" alt="SDSN Youth Logo" />
+                            </div>
+                            <div class="job-details">
+                                <h3 class="job-title">SDG Coordinator</h3>
+                                <h4 class="company">SDSN Youth</h4>
+                                <div class="duration">August 2020 - May 2022</div>
+                            </div>
+                        </div>
+                        <div class="job-description">
+                            Engaged students from higher learning institutions on Sustainable Development Goals through innovative campus-level and community-level initiatives. Built foundations for sustainability advocacy and climate action.
+                        </div>
+                        <div class="achievements">
+                            <span class="achievement-tag">Climate Action Campaigns</span>
+                            <span class="achievement-tag">Student Engagement</span>
+                            <span class="achievement-tag">Community Initiatives</span>
+                            <span class="achievement-tag">Sustainability Leadership</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -636,7 +854,7 @@
             <div class="cert-grid">
                 <div class="cert-card">
                     <div class="cert-badge">
-                        <img src="egdb.png" alt="Enterprise Geodata Management Professional Badge" />
+                        <img src="https://images.credly.com/size/340x340/images/85b9cfc4-257a-4742-878c-4f7ab4a2631b/image.png" alt="Enterprise Geodata Management Professional Badge" />
                     </div>
                     <h3 style="color: #00ff88; margin-bottom: 0.5rem;">Enterprise Geodata Management Professional</h3>
                     <p style="opacity: 0.7; margin-bottom: 0.5rem;">Esri - 2024</p>
@@ -645,7 +863,7 @@
                 
                 <div class="cert-card">
                     <div class="cert-badge">
-                        <img src="arcgis-pro-associate.png" alt="ArcGIS Pro Associate Badge" />
+                        <img src="https://images.credly.com/size/340x340/images/11c5a4c0-9c88-4e96-ac69-6799b821c7b3/image.png" alt="ArcGIS Pro Associate Badge" />
                     </div>
                     <h3 style="color: #00ff88; margin-bottom: 0.5rem;">ArcGIS Pro Associate</h3>
                     <p style="opacity: 0.7; margin-bottom: 0.5rem;">Esri - 2023</p>
@@ -654,7 +872,7 @@
                 
                 <div class="cert-card">
                     <div class="cert-badge">
-                        <img src="dataanalytics.png" alt="Google Advanced Data Analytics Badge" />
+                        <img src="https://images.credly.com/size/340x340/images/d41de2b7-cbc2-47ec-bcf1-ebecbe83872f/GCC_badge_DA_1000x1000.png" alt="Google Advanced Data Analytics Badge" />
                     </div>
                     <h3 style="color: #00ff88; margin-bottom: 0.5rem;">Google Advanced Data Analytics</h3>
                     <p style="opacity: 0.7; margin-bottom: 0.5rem;">Google - 2023</p>
@@ -663,7 +881,7 @@
                 
                 <div class="cert-card">
                     <div class="cert-badge">
-                        <img src="sql.png" alt="IBM SQL Badge" />
+                        <img src="https://images.credly.com/size/340x340/images/594e0ab7-c864-4d9a-9987-3a903ec3f06a/Cognitive_Class_-_DB_and_SQL_for_Data_Sci.png" alt="IBM SQL Badge" />
                     </div>
                     <h3 style="color: #00ff88; margin-bottom: 0.5rem;">Databases and SQL for Data Science</h3>
                     <p style="opacity: 0.7; margin-bottom: 0.5rem;">IBM - 2023</p>
@@ -672,7 +890,7 @@
                 
                 <div class="cert-card">
                     <div class="cert-badge">
-                        <img src="GCC_badge_PGM_1000x1000.png" alt="Google Project Management Badge" />
+                        <img src="https://images.credly.com/size/340x340/images/771cff46-3573-4d12-bfd8-528745f00957/GCC_badge_PGM_1000x1000.png" alt="Google Project Management Badge" />
                     </div>
                     <h3 style="color: #00ff88; margin-bottom: 0.5rem;">Google Project Management</h3>
                     <p style="opacity: 0.7; margin-bottom: 0.5rem;">Google - 2023</p>
@@ -681,7 +899,7 @@
                 
                 <div class="cert-card">
                     <div class="cert-badge">
-                        <img src="blob.png" alt="PMI Generative AI Badge" />
+                        <img src="https://images.credly.com/size/340x340/images/2700b813-82b8-4232-9b36-5dcd5cd24584/Generative_AI_Overview_for_Project_Managers.png" alt="PMI Generative AI Badge" />
                     </div>
                     <h3 style="color: #00ff88; margin-bottom: 0.5rem;">Generative AI for Project Managers</h3>
                     <p style="opacity: 0.7; margin-bottom: 0.5rem;">PMI - 2024</p>
@@ -915,6 +1133,21 @@
             el.style.transform = 'translateY(50px)';
             el.style.transition = 'all 0.6s ease';
             observer.observe(el);
+        });
+
+        // Enhanced timeline animation
+        const timelineObserver = new IntersectionObserver((entries) => {
+            entries.forEach((entry, index) => {
+                if (entry.isIntersecting) {
+                    setTimeout(() => {
+                        entry.target.classList.add('animate-in');
+                    }, index * 200);
+                }
+            });
+        }, { threshold: 0.3 });
+
+        document.querySelectorAll('.timeline-item').forEach(item => {
+            timelineObserver.observe(item);
         });
         
         // Mouse parallax effect
