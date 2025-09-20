@@ -1,9 +1,40 @@
-<!DOCTYPE html>
+<h2 class="section-title">Professional Certifications</h2>
+            <div class="cert-grid">
+                <div class="cert-card">
+                    <div class="cert-badge">🏛️</div>
+                    <h3 class="cert-title">Enterprise Geodata Management Professional</h3>
+                    <p class="cert-issuer">Esri - 2025</p>
+                    <p>Master architect of enterprise spatial data ecosystems</p>
+                </div>
+                
+                <div class="cert-card">
+                    <div class="cert-badge">🗺️</div>
+                    <h3 class="cert-title">ArcGIS Pro Associate</h3>
+                    <p class="cert-issuer">Esri - 2023</p>
+                    <p>Advanced spatial analysis and cartographic intelligence</p>
+                </div>
+                
+                <div class="cert-card">
+                    <div class="cert-badge">📊</div>
+                    <h3 class="cert-title">Google Advanced Data Analytics</h3>
+                    <p class="cert-issuer">Google - 2023</p>
+                    <p>Data science and analytics across multiple dimensions</p>
+                </div>
+                
+                <div class="cert-card">
+                    <div class="cert-badge">🗄️</div>
+                    <h3 class="cert-title">Databases & SQL for Data Science</h3>
+                    <p class="cert-issuer">IBM - 2023</p>
+                    <p>Database architecture and spatial data management</p>
+                </div>
+                
+                <div class="cert-card">
+                    <div class="cert-badge<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gilbert Uwonkunda - Interactive GIS Portfolio</title>
+    <title>Gilbert Uwonkunda - Spatial Intelligence Architect</title>
     <style>
         * {
             margin: 0;
@@ -13,44 +44,87 @@
 
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            background: #0a0a0a;
+            background: #000511;
             color: #fff;
             overflow-x: hidden;
             cursor: none;
+            position: relative;
         }
 
-        /* Custom Cursor */
-        .cursor {
-            position: fixed;
-            width: 20px;
-            height: 20px;
-            border: 2px solid #00ff88;
-            border-radius: 50%;
-            pointer-events: none;
-            z-index: 9999;
-            mix-blend-mode: difference;
-            transition: all 0.1s ease;
-        }
-
-        .cursor-trail {
-            position: fixed;
-            width: 6px;
-            height: 6px;
-            background: #00ff88;
-            border-radius: 50%;
-            pointer-events: none;
-            z-index: 9998;
-            opacity: 0.8;
-        }
-
-        /* Animated Background */
-        .background-canvas {
+        /* Cosmic Background */
+        .cosmic-bg {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
+            background: radial-gradient(ellipse at bottom, #0d1b2a 0%, #000511 70%);
+            z-index: -2;
+        }
+
+        .stars {
+            position: fixed;
+            width: 100%;
+            height: 100%;
             z-index: -1;
+        }
+
+        .star {
+            position: absolute;
+            background: #fff;
+            border-radius: 50%;
+            animation: twinkle 3s infinite ease-in-out;
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.3; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.2); }
+        }
+
+        /* Nebula Effect */
+        .nebula {
+            position: fixed;
+            width: 200%;
+            height: 200%;
+            top: -50%;
+            left: -50%;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(120, 50, 255, 0.03) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(255, 50, 120, 0.03) 0%, transparent 50%),
+                radial-gradient(circle at 40% 80%, rgba(50, 255, 180, 0.03) 0%, transparent 50%);
+            animation: rotate 120s linear infinite;
+            z-index: -1;
+        }
+
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Custom Cosmic Cursor */
+        .cursor {
+            position: fixed;
+            width: 25px;
+            height: 25px;
+            border: 2px solid #7c3aed;
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 9999;
+            mix-blend-mode: difference;
+            transition: all 0.1s ease;
+            box-shadow: 0 0 20px rgba(124, 58, 237, 0.6);
+        }
+
+        .cursor-trail {
+            position: fixed;
+            width: 8px;
+            height: 8px;
+            background: linear-gradient(45deg, #7c3aed, #06b6d4);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 9998;
+            opacity: 0.7;
+            box-shadow: 0 0 10px rgba(124, 58, 237, 0.4);
         }
 
         /* Hero Section */
@@ -66,37 +140,48 @@
         .hero-content {
             text-align: center;
             z-index: 2;
+            max-width: 1000px;
+            padding: 0 2rem;
         }
 
         .hero-title {
-            font-size: clamp(2.5rem, 6vw, 5rem);
+            font-size: clamp(2.5rem, 7vw, 6rem);
             font-weight: 900;
             margin-bottom: 1rem;
-            background: linear-gradient(45deg, #00ff88, #00d4ff, #ff0080);
-            background-size: 300% 300%;
+            background: linear-gradient(45deg, #7c3aed, #06b6d4, #d946ef, #f59e0b);
+            background-size: 400% 400%;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            animation: gradient-shift 3s ease infinite;
+            animation: cosmic-gradient 4s ease infinite;
+            text-shadow: 0 0 30px rgba(124, 58, 237, 0.5);
+            letter-spacing: -0.02em;
         }
 
-        .hero-subtitle {
-            font-size: clamp(1.2rem, 3vw, 2rem);
+        .universe-subtitle {
+            font-size: clamp(1.4rem, 4vw, 2.5rem);
             margin-bottom: 2rem;
-            opacity: 0.8;
+            background: linear-gradient(135deg, #06b6d4, #8b5cf6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 600;
         }
 
-        .hero-description {
-            font-size: 1.1rem;
-            max-width: 600px;
+        .professional-description {
+            font-size: 1.2rem;
+            max-width: 700px;
             margin: 0 auto 3rem;
-            opacity: 0.7;
-            line-height: 1.6;
+            opacity: 0.9;
+            line-height: 1.8;
+            color: #e2e8f0;
         }
 
-        @keyframes gradient-shift {
+        @keyframes cosmic-gradient {
             0%, 100% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
+            25% { background-position: 100% 50%; }
+            50% { background-position: 50% 0%; }
+            75% { background-position: 50% 100%; }
         }
 
         /* Navigation */
@@ -110,35 +195,39 @@
 
         .nav-item {
             display: block;
-            width: 12px;
-            height: 12px;
-            margin: 1rem 0;
-            background: rgba(255, 255, 255, 0.3);
+            width: 15px;
+            height: 15px;
+            margin: 1.5rem 0;
+            background: rgba(255, 255, 255, 0.2);
             border-radius: 50%;
             cursor: pointer;
-            transition: all 0.3s ease;
+            transition: all 0.4s ease;
             position: relative;
+            border: 2px solid transparent;
         }
 
         .nav-item:hover, .nav-item.active {
-            background: #00ff88;
-            transform: scale(1.5);
+            background: linear-gradient(135deg, #7c3aed, #06b6d4);
+            transform: scale(1.8);
+            box-shadow: 0 0 25px rgba(124, 58, 237, 0.8);
         }
 
         .nav-item::after {
             content: attr(data-section);
             position: absolute;
-            right: 2rem;
+            right: 2.5rem;
             top: 50%;
             transform: translateY(-50%);
-            background: rgba(0, 0, 0, 0.8);
-            padding: 0.5rem 1rem;
-            border-radius: 4px;
-            font-size: 0.8rem;
+            background: rgba(0, 5, 17, 0.95);
+            padding: 0.8rem 1.2rem;
+            border-radius: 8px;
+            font-size: 0.9rem;
             white-space: nowrap;
             opacity: 0;
             pointer-events: none;
             transition: opacity 0.3s ease;
+            border: 1px solid rgba(124, 58, 237, 0.3);
+            backdrop-filter: blur(10px);
         }
 
         .nav-item:hover::after {
@@ -148,10 +237,11 @@
         /* Sections */
         .section {
             min-height: 100vh;
-            padding: 2rem 2rem;
+            padding: 4rem 2rem;
             display: flex;
             align-items: center;
             justify-content: center;
+            position: relative;
         }
 
         .container {
@@ -160,68 +250,92 @@
         }
 
         .section-title {
-            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
             font-weight: 800;
-            margin-bottom: 3rem;
+            margin-bottom: 4rem;
             text-align: center;
-            background: linear-gradient(135deg, #00ff88, #00d4ff);
+            background: linear-gradient(135deg, #7c3aed, #06b6d4, #d946ef);
+            background-size: 200% 200%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: cosmic-gradient 3s ease infinite;
+        }
+
+        /* About Section */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-text {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: #e2e8f0;
+        }
+
+        .professional-quote {
+            font-size: 1.4rem;
+            font-style: italic;
+            color: #06b6d4;
+            margin: 2rem 0;
+            padding-left: 2rem;
+            border-left: 3px solid #7c3aed;
+            background: rgba(124, 58, 237, 0.05);
+            padding: 1.5rem 2rem;
+            border-radius: 0 10px 10px 0;
+        }
+
+        .professional-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .stat-item {
+            background: rgba(124, 58, 237, 0.1);
+            border: 1px solid rgba(124, 58, 237, 0.3);
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+
+        .stat-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(124, 58, 237, 0.3);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, #7c3aed, #06b6d4);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
 
-        /* Skills Visualization */
-        .skills-viz {
-            position: relative;
-            height: 600px;
-            margin: 2rem 0;
-        }
-
-        .skill-bubble {
-            position: absolute;
-            background: rgba(0, 255, 136, 0.1);
-            border: 2px solid #00ff88;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            animation: float 6s ease-in-out infinite;
-        }
-
-        .skill-bubble:hover {
-            background: rgba(0, 255, 136, 0.3);
-            transform: scale(1.1);
-            box-shadow: 0 0 30px rgba(0, 255, 136, 0.5);
-        }
-
-        .skill-bubble:nth-child(even) {
-            animation-delay: -3s;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-20px); }
+        .stat-label {
+            color: #94a3b8;
+            margin-top: 0.5rem;
         }
 
         /* Experience Timeline */
         .timeline {
             position: relative;
-            max-width: 900px;
+            max-width: 1000px;
             margin: 0 auto;
         }
 
         .timeline-item {
-            padding: 0;
-            position: relative;
-            background: transparent;
-            border-radius: 0;
-            margin: 3rem 0;
-            transition: all 0.5s ease;
+            margin: 4rem 0;
             opacity: 0;
             transform: translateX(-50px);
+            transition: all 0.8s ease;
         }
 
         .timeline-item.animate-in {
@@ -230,15 +344,14 @@
         }
 
         .experience-card {
-            background: rgba(255, 255, 255, 0.02);
-            border-radius: 20px;
-            padding: 2.5rem;
-            backdrop-filter: blur(15px);
-            border: 1px solid rgba(0, 255, 136, 0.2);
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 25px;
+            padding: 3rem;
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(124, 58, 237, 0.2);
             position: relative;
             overflow: hidden;
-            transition: all 0.4s ease;
-            transform-style: preserve-3d;
+            transition: all 0.5s ease;
         }
 
         .experience-card::before {
@@ -248,8 +361,8 @@
             left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(0, 255, 136, 0.1), transparent);
-            transition: left 0.8s ease;
+            background: linear-gradient(90deg, transparent, rgba(124, 58, 237, 0.1), transparent);
+            transition: left 1s ease;
         }
 
         .experience-card:hover::before {
@@ -257,44 +370,35 @@
         }
 
         .experience-card:hover {
-            transform: translateY(-15px) rotateX(5deg);
+            transform: translateY(-20px) rotateX(5deg);
             box-shadow: 
-                0 30px 60px rgba(0, 255, 136, 0.3),
-                0 0 0 1px rgba(0, 255, 136, 0.4),
+                0 40px 80px rgba(124, 58, 237, 0.4),
+                0 0 0 1px rgba(124, 58, 237, 0.5),
                 inset 0 1px 0 rgba(255, 255, 255, 0.1);
-            border-color: rgba(0, 255, 136, 0.6);
+            border-color: rgba(124, 58, 237, 0.7);
         }
 
         .job-header {
             display: flex;
             align-items: center;
-            margin-bottom: 1.5rem;
-            position: relative;
+            margin-bottom: 2rem;
         }
 
         .job-icon {
-            width: 60px;
-            height: 60px;
-            background: rgba(255, 255, 255, 0.95);
-            border-radius: 15px;
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #7c3aed, #06b6d4);
+            border-radius: 20px;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-right: 1.5rem;
-            font-size: 1.5rem;
+            margin-right: 2rem;
+            font-size: 2rem;
             font-weight: bold;
-            color: #000;
-            animation: pulse-glow 3s ease-in-out infinite;
+            color: #fff;
+            animation: cosmic-pulse 3s ease-in-out infinite;
             position: relative;
             overflow: hidden;
-            padding: 8px;
-        }
-
-        .job-icon img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-            border-radius: 8px;
         }
 
         .job-icon::before {
@@ -306,23 +410,23 @@
             height: 200%;
             background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.3), transparent);
             transform: rotate(45deg);
-            animation: shine 2s infinite;
+            animation: cosmic-shine 3s infinite;
         }
 
-        @keyframes pulse-glow {
+        @keyframes cosmic-pulse {
             0%, 100% { 
-                box-shadow: 0 0 20px rgba(0, 255, 136, 0.5);
+                box-shadow: 0 0 30px rgba(124, 58, 237, 0.6);
                 transform: scale(1);
             }
             50% { 
-                box-shadow: 0 0 30px rgba(0, 255, 136, 0.8);
+                box-shadow: 0 0 50px rgba(124, 58, 237, 1);
                 transform: scale(1.05);
             }
         }
 
-        @keyframes shine {
-            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
-            100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+        @keyframes cosmic-shine {
+            0% { transform: translateX(-200%) translateY(-200%) rotate(45deg); }
+            100% { transform: translateX(200%) translateY(200%) rotate(45deg); }
         }
 
         .job-details {
@@ -330,131 +434,56 @@
         }
 
         .job-title {
-            font-size: 1.6rem;
+            font-size: 1.8rem;
             font-weight: 800;
             color: #fff;
-            margin-bottom: 0.5rem;
-            background: linear-gradient(135deg, #00ff88, #00d4ff);
+            margin-bottom: 0.8rem;
+            background: linear-gradient(135deg, #7c3aed, #06b6d4);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
 
         .company {
-            font-size: 1.2rem;
-            color: #00d4ff;
-            margin-bottom: 0.3rem;
+            font-size: 1.4rem;
+            color: #06b6d4;
+            margin-bottom: 0.5rem;
             font-weight: 600;
         }
 
         .duration {
-            color: rgba(255, 255, 255, 0.7);
-            font-size: 0.95rem;
-            margin-bottom: 1.5rem;
-            padding: 0.3rem 0.8rem;
-            background: rgba(0, 255, 136, 0.1);
-            border-radius: 20px;
+            color: #94a3b8;
+            font-size: 1rem;
+            margin-bottom: 2rem;
+            padding: 0.5rem 1rem;
+            background: rgba(124, 58, 237, 0.15);
+            border-radius: 25px;
             display: inline-block;
-            border: 1px solid rgba(0, 255, 136, 0.3);
+            border: 1px solid rgba(124, 58, 237, 0.4);
         }
 
         .job-description {
-            font-size: 1.05rem;
-            line-height: 1.7;
-            color: rgba(255, 255, 255, 0.9);
-            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #e2e8f0;
+            margin-bottom: 2rem;
         }
 
-        .achievements {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
-            margin-top: 1.5rem;
-        }
-
-        .achievement-tag {
-            background: rgba(0, 255, 136, 0.1);
-            border: 1px solid rgba(0, 255, 136, 0.3);
-            color: #00ff88;
-            padding: 0.5rem 1rem;
-            border-radius: 25px;
-            font-size: 0.85rem;
-            font-weight: 500;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .achievement-tag::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(0, 255, 136, 0.2), transparent);
-            transition: left 0.5s ease;
-        }
-
-        .achievement-tag:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0, 255, 136, 0.3);
-            background: rgba(0, 255, 136, 0.2);
-        }
-
-        .achievement-tag:hover::before {
-            left: 100%;
-        }
-
-        .timeline-connector {
-            position: absolute;
-            left: 30px;
-            top: 80px;
-            bottom: -80px;
-            width: 2px;
-            background: linear-gradient(to bottom, 
-                rgba(0, 255, 136, 0.8), 
-                rgba(0, 212, 255, 0.6), 
-                transparent
-            );
-            z-index: -1;
-        }
-
-        .timeline-item:last-child .timeline-connector {
-            display: none;
-        }
-
-        .experience-number {
-            position: absolute;
-            top: -10px;
-            right: 20px;
-            background: linear-gradient(135deg, #00ff88, #00d4ff);
-            color: #000;
-            width: 30px;
-            height: 30px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-            font-size: 0.9rem;
-        }
-
-        /* Project Cards */
+        /* Projects Section */
         .projects-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
-            margin: 2rem 0;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 3rem;
+            margin: 3rem 0;
         }
 
         .project-card {
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 20px;
-            padding: 2rem;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            transition: all 0.3s ease;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 25px;
+            padding: 3rem;
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(124, 58, 237, 0.2);
+            transition: all 0.5s ease;
             position: relative;
             overflow: hidden;
         }
@@ -466,8 +495,8 @@
             left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(0, 255, 136, 0.1), transparent);
-            transition: left 0.5s ease;
+            background: linear-gradient(90deg, transparent, rgba(6, 182, 212, 0.1), transparent);
+            transition: left 0.8s ease;
         }
 
         .project-card:hover::before {
@@ -475,137 +504,222 @@
         }
 
         .project-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 25px 50px rgba(0, 255, 136, 0.3);
+            transform: translateY(-15px) scale(1.02);
+            box-shadow: 0 30px 60px rgba(6, 182, 212, 0.4);
+            border-color: rgba(6, 182, 212, 0.6);
         }
 
-        /* Certifications */
-        .cert-grid {
+        .project-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, #06b6d4, #7c3aed);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .project-impact {
+            color: #10b981;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .project-description {
+            color: #cbd5e1;
+            line-height: 1.7;
+            font-size: 1rem;
+        }
+
+        .project-stats {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .project-stat {
+            background: rgba(16, 185, 129, 0.15);
+            color: #10b981;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            border: 1px solid rgba(16, 185, 129, 0.3);
+        }
+
+        /* Training Galaxies */
+        .training-programs {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
-            margin: 2rem 0;
+            margin: 3rem 0;
+        }
+
+        .training-program {
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 20px;
+            padding: 2rem;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(217, 70, 239, 0.2);
+            transition: all 0.4s ease;
+        }
+
+        .training-program:hover {
+            transform: scale(1.05);
+            box-shadow: 0 20px 40px rgba(217, 70, 239, 0.3);
+        }
+
+        .program-name {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #d946ef;
+            margin-bottom: 1rem;
+        }
+
+        .program-participants {
+            color: #f59e0b;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .program-description {
+            color: #94a3b8;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* Certifications Constellation */
+        .cert-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+            margin: 3rem 0;
         }
 
         .cert-card {
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 15px;
-            padding: 1.5rem;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            transition: all 0.3s ease;
+            background: rgba(255, 255, 255, 0.04);
+            border-radius: 20px;
+            padding: 2.5rem;
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(245, 158, 11, 0.2);
+            transition: all 0.4s ease;
+            text-align: center;
             position: relative;
         }
 
         .cert-card:hover {
-            transform: rotateY(10deg);
-            box-shadow: 0 15px 30px rgba(0, 212, 255, 0.3);
+            transform: rotateY(10deg) translateY(-10px);
+            box-shadow: 0 25px 50px rgba(245, 158, 11, 0.4);
         }
 
         .cert-badge {
-            width: 80px;
-            height: 80px;
-            background: linear-gradient(135deg, #00ff88, #00d4ff);
-            border-radius: 15px;
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(135deg, #f59e0b, #d946ef);
+            border-radius: 20px;
             display: flex;
             align-items: center;
             justify-content: center;
             font-weight: bold;
-            margin-bottom: 1rem;
+            margin: 0 auto 1.5rem;
             overflow: hidden;
-            border: 2px solid rgba(255, 255, 255, 0.2);
-            transition: all 0.3s ease;
-        }
-
-        .cert-badge img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 13px;
+            border: 3px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.4s ease;
         }
 
         .cert-badge:hover {
-            transform: scale(1.1);
-            box-shadow: 0 10px 25px rgba(0, 255, 136, 0.3);
+            transform: scale(1.15) rotate(5deg);
+            box-shadow: 0 15px 30px rgba(245, 158, 11, 0.4);
         }
 
-        .cert-card:hover .cert-badge {
-            transform: scale(1.1) rotate(5deg);
+        .cert-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #f59e0b;
+            margin-bottom: 0.8rem;
         }
 
-        /* Contact Section */
-        .contact-grid {
+        .cert-issuer {
+            color: #94a3b8;
+            margin-bottom: 1rem;
+        }
+
+        /* Contact Constellation */
+        .contact-constellation {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 1.5rem;
-            margin: 2rem 0;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
         }
 
-        .contact-item {
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 15px;
-            padding: 2rem;
+        .contact-star {
+            background: rgba(255, 255, 255, 0.04);
+            border-radius: 20px;
+            padding: 2.5rem;
             text-align: center;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            transition: all 0.3s ease;
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(124, 58, 237, 0.2);
+            transition: all 0.4s ease;
             text-decoration: none;
             color: inherit;
         }
 
-        .contact-item:hover {
-            transform: scale(1.05);
-            background: rgba(0, 255, 136, 0.1);
+        .contact-star:hover {
+            transform: scale(1.08);
+            background: rgba(124, 58, 237, 0.1);
+            box-shadow: 0 20px 40px rgba(124, 58, 237, 0.3);
         }
 
         .contact-icon {
-            font-size: 2rem;
-            margin-bottom: 1rem;
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            filter: drop-shadow(0 0 10px rgba(124, 58, 237, 0.6));
         }
 
-        /* Scroll Indicator */
-        .scroll-indicator {
+        /* Cosmic Scroll Indicator */
+        .cosmic-scroll {
             position: fixed;
-            bottom: 2rem;
+            bottom: 3rem;
             left: 50%;
             transform: translateX(-50%);
-            font-size: 2rem;
-            animation: bounce 2s infinite;
-            opacity: 0.7;
+            font-size: 2.5rem;
+            animation: cosmic-bounce 2s infinite;
+            opacity: 0.8;
+            filter: drop-shadow(0 0 15px rgba(124, 58, 237, 0.8));
         }
 
-        @keyframes bounce {
+        @keyframes cosmic-bounce {
             0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
-            40% { transform: translateX(-50%) translateY(-10px); }
-            60% { transform: translateX(-50%) translateY(-5px); }
+            40% { transform: translateX(-50%) translateY(-15px); }
+            60% { transform: translateX(-50%) translateY(-8px); }
         }
 
-        /* Responsive */
+        /* Responsive Design */
         @media (max-width: 768px) {
-            .nav {
-                display: none;
-            }
-            
-            .section {
-                padding: 1.5rem 1rem;
-            }
+            .nav { display: none; }
+            .section { padding: 2rem 1rem; }
+            .about-content { grid-template-columns: 1fr; gap: 2rem; }
+            .cosmic-stats { grid-template-columns: 1fr; }
+            .projects-constellation { grid-template-columns: 1fr; }
+            .training-galaxies { grid-template-columns: 1fr; }
+            .cert-constellation { grid-template-columns: 1fr; }
+            .contact-constellation { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
         }
 
-        /* Particle effect */
-        .particle {
-            position: absolute;
+        /* Shooting Stars */
+        .shooting-star {
+            position: fixed;
             width: 2px;
             height: 2px;
-            background: #00ff88;
+            background: linear-gradient(45deg, #fff, transparent);
             border-radius: 50%;
-            pointer-events: none;
-            opacity: 0.7;
-            animation: particle-float 4s linear infinite;
+            animation: shoot 3s linear infinite;
         }
 
-        @keyframes particle-float {
+        @keyframes shoot {
             0% {
-                transform: translateY(100vh) rotate(0deg);
+                transform: translateX(-100vw) translateY(100vh);
                 opacity: 0;
             }
             10% {
@@ -615,68 +729,46 @@
                 opacity: 1;
             }
             100% {
-                transform: translateY(-100vh) rotate(360deg);
+                transform: translateX(100vw) translateY(-100vh);
                 opacity: 0;
             }
         }
 
-        .glitch {
-            position: relative;
-            display: inline-block;
-        }
-
-        .glitch::before,
-        .glitch::after {
-            content: attr(data-text);
+        /* Parallax Layers */
+        .parallax-layer {
             position: absolute;
-            top: 0;
-            left: 0;
             width: 100%;
             height: 100%;
+            pointer-events: none;
         }
 
-        .glitch::before {
-            animation: glitch-1 2s infinite;
-            color: #00ff88;
-            z-index: -1;
+        .floating-element {
+            position: absolute;
+            opacity: 0.1;
+            animation: float-cosmic 20s ease-in-out infinite;
         }
 
-        .glitch::after {
-            animation: glitch-2 2s infinite;
-            color: #ff0080;
-            z-index: -2;
-        }
-
-        @keyframes glitch-1 {
-            0%, 14%, 15%, 49%, 50%, 99%, 100% {
-                transform: translate(0);
-            }
-            15%, 49% {
-                transform: translate(-2px, 2px);
-            }
-        }
-
-        @keyframes glitch-2 {
-            0%, 20%, 21%, 62%, 63%, 99%, 100% {
-                transform: translate(0);
-            }
-            21%, 62% {
-                transform: translate(2px, -2px);
-            }
+        @keyframes float-cosmic {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            25% { transform: translateY(-30px) rotate(5deg); }
+            50% { transform: translateY(-50px) rotate(0deg); }
+            75% { transform: translateY(-30px) rotate(-5deg); }
         }
     </style>
 </head>
 <body>
+    <div class="cosmic-bg"></div>
+    <div class="nebula"></div>
+    <div class="stars"></div>
     <div class="cursor"></div>
-    <canvas class="background-canvas"></canvas>
     
     <!-- Navigation -->
     <nav class="nav">
-        <div class="nav-item active" data-section="Hero" onclick="scrollToSection('hero')"></div>
+        <div class="nav-item active" data-section="Home" onclick="scrollToSection('hero')"></div>
         <div class="nav-item" data-section="About" onclick="scrollToSection('about')"></div>
-        <div class="nav-item" data-section="Skills" onclick="scrollToSection('skills')"></div>
         <div class="nav-item" data-section="Experience" onclick="scrollToSection('experience')"></div>
         <div class="nav-item" data-section="Projects" onclick="scrollToSection('projects')"></div>
+        <div class="nav-item" data-section="Training" onclick="scrollToSection('training')"></div>
         <div class="nav-item" data-section="Certifications" onclick="scrollToSection('certifications')"></div>
         <div class="nav-item" data-section="Contact" onclick="scrollToSection('contact')"></div>
     </nav>
@@ -684,42 +776,50 @@
     <!-- Hero Section -->
     <section class="hero section" id="hero">
         <div class="hero-content">
-            <h1 class="hero-title glitch" data-text="GILBERT UWONKUNDA">GILBERT UWONKUNDA</h1>
-            <p class="hero-subtitle">Senior GIS Specialist & Spatial Data Architect</p>
-            <p class="hero-description">
-                Transforming complex geospatial data into actionable intelligence that saves lives and shapes sustainable futures across Rwanda, Burundi, and the Democratic Republic of Congo.
+            <h1 class="hero-title">GILBERT UWONKUNDA</h1>
+            <p class="universe-subtitle">Senior GIS Specialist & Spatial Data Architect</p>
+            <p class="professional-description">
+                Transforming complex geospatial data into actionable intelligence that drives emergency response systems, urban planning solutions, and sustainable development across Rwanda, Burundi, and the Democratic Republic of Congo. Specializing in enterprise GIS implementations and capacity building programs.
             </p>
         </div>
-        <div class="scroll-indicator">↓</div>
+        <div class="cosmic-scroll">🌌</div>
     </section>
 
     <!-- About Section -->
     <section class="section" id="about">
         <div class="container">
             <h2 class="section-title">About Me</h2>
-            <div style="text-align: center; font-size: 1.2rem; line-height: 1.8; max-width: 800px; margin: 0 auto;">
-                <p>I'm a passionate GIS specialist who believes that geography is the key to understanding our world. With over 4 years of experience at Esri Rwanda, I've led groundbreaking projects that have reduced emergency response times by 30% and helped cities monitor development compliance through advanced satellite imagery analysis.</p>
-                <br>
-                <p>My work spans from designing real-time ambulance dispatch systems to monitoring national parks, always with the goal of creating sustainable solutions through spatial intelligence.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section class="section" id="skills">
-        <div class="container">
-            <h2 class="section-title">Technical Expertise</h2>
-            <div class="skills-viz">
-                <div class="skill-bubble" style="top: 10%; left: 20%; width: 120px; height: 120px; font-size: 0.9rem;">ArcGIS Pro</div>
-                <div class="skill-bubble" style="top: 5%; left: 60%; width: 100px; height: 100px; font-size: 0.8rem;">Python</div>
-                <div class="skill-bubble" style="top: 25%; left: 80%; width: 90px; height: 90px; font-size: 0.8rem;">JavaScript</div>
-                <div class="skill-bubble" style="top: 45%; left: 15%; width: 110px; height: 110px; font-size: 0.8rem;">PostgreSQL</div>
-                <div class="skill-bubble" style="top: 40%; left: 50%; width: 130px; height: 130px; font-size: 0.9rem;">Remote Sensing</div>
-                <div class="skill-bubble" style="top: 60%; left: 75%; width: 95px; height: 95px; font-size: 0.8rem;">SQL</div>
-                <div class="skill-bubble" style="top: 70%; left: 25%; width: 115px; height: 115px; font-size: 0.8rem;">ArcGIS Enterprise</div>
-                <div class="skill-bubble" style="top: 80%; left: 55%; width: 105px; height: 105px; font-size: 0.8rem;">Spatial Analysis</div>
-                <div class="skill-bubble" style="top: 15%; left: 40%; width: 85px; height: 85px; font-size: 0.7rem;">Autodesk</div>
-                <div class="skill-bubble" style="top: 35%; left: 85%; width: 95px; height: 95px; font-size: 0.8rem;">M&E</div>
+            <div class="about-content">
+                <div>
+                    <div class="about-text">
+                        <p>I'm a passionate GIS specialist with over 4 years of experience at Esri Rwanda, specializing in enterprise geospatial solutions that drive meaningful impact. My expertise spans emergency response systems, urban development monitoring, and large-scale capacity building programs across East Africa.</p>
+                        
+                        <div class="professional-quote">
+                            "Geography is the key to understanding our world. Through spatial intelligence, we transform complex data into solutions that save lives and build sustainable futures."
+                        </div>
+                        
+                        <p>From designing real-time ambulance dispatch systems that reduce emergency response times by 80% to implementing AI-powered building detection for urban compliance monitoring, I focus on creating scalable solutions that address real-world challenges through advanced geospatial technology.</p>
+                    </div>
+                </div>
+                
+                <div class="professional-stats">
+                    <div class="stat-item">
+                        <div class="stat-number">6</div>
+                        <div class="stat-label">Major National Projects</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">300+</div>
+                        <div class="stat-label">Professionals Trained</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">9</div>
+                        <div class="stat-label">Government Agencies</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">3+</div>
+                        <div class="stat-label">Countries Served</div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -727,81 +827,20 @@
     <!-- Experience Section -->
     <section class="section" id="experience">
         <div class="container">
-            <h2 class="section-title">Professional Journey</h2>
+            <h2 class="section-title">Mission Control Centers</h2>
             <div class="timeline">
                 <div class="timeline-item">
-                    <div class="timeline-connector"></div>
                     <div class="experience-card">
-                        <div class="experience-number">1</div>
                         <div class="job-header">
-                            <div class="job-icon">
-                                <img src="EsriRwanda.png" alt="Esri Logo" />
-                            </div>
+                            <div class="job-icon">🚀</div>
                             <div class="job-details">
-                                <h3 class="job-title">Senior GIS Specialist</h3>
-                                <h4 class="company">Esri Rwanda</h4>
-                                <div class="duration">January 2025 - Present</div>
-                            </div>
-                        </div>
-                        <div class="job-description">
-                            Leading advanced GIS solutions across East Africa, focusing on emergency response systems and urban planning compliance. Spearheading innovative projects that transform spatial data into life-saving solutions.
-                        </div>
-                        <div class="achievements">
-                            <span class="achievement-tag">30% Response Time Reduction</span>
-                            <span class="achievement-tag">Emergency Systems</span>
-                            <span class="achievement-tag">East Africa Lead</span>
-                            <span class="achievement-tag">Urban Planning</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="timeline-item">
-                    <div class="timeline-connector"></div>
-                    <div class="experience-card">
-                        <div class="experience-number">2</div>
-                        <div class="job-header">
-                            <div class="job-icon">
-                                <img src="EsriRwanda.png" alt="Esri Logo" />
-                            </div>
-                            <div class="job-details">
-                                <h3 class="job-title">GIS Specialist</h3>
-                                <h4 class="company">Esri Rwanda</h4>
-                                <div class="duration">June 2022 - December 2024</div>
-                            </div>
-                        </div>
-                        <div class="job-description">
-                            Delivered comprehensive GIS solutions for clients across Rwanda, Burundi, and DRC. Specialized in satellite imagery analysis for urban development monitoring and Master Plan compliance using cutting-edge geospatial technologies.
-                        </div>
-                        <div class="achievements">
-                            <span class="achievement-tag">Multi-Country Projects</span>
-                            <span class="achievement-tag">Satellite Imagery</span>
-                            <span class="achievement-tag">Master Plan Compliance</span>
-                            <span class="achievement-tag">ArcGIS Mission Manager</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="timeline-item">
-                    <div class="experience-card">
-                        <div class="experience-number">3</div>
-                        <div class="job-header">
-                            <div class="job-icon">
-                                <img src="60a5e4221ed0b785540e8584_SDSN+Youth+logo+cropped.png" alt="SDSN Youth Logo" />
-                            </div>
-                            <div class="job-details">
-                                <h3 class="job-title">SDG Coordinator</h3>
-                                <h4 class="company">SDSN Youth</h4>
+                                <h3 class="job-title">Senior Spatial Intelligence Architect</h3>
+                                <h4 class="company">Esri Rwanda - Mission Control</h4>
                                 <div class="duration">August 2020 - May 2022</div>
                             </div>
                         </div>
                         <div class="job-description">
-                            Engaged students from higher learning institutions on Sustainable Development Goals through innovative campus-level and community-level initiatives. Built foundations for sustainability advocacy and climate action.
-                        </div>
-                        <div class="achievements">
-                            <span class="achievement-tag">Climate Action Campaigns</span>
-                            <span class="achievement-tag">Student Engagement</span>
-                            <span class="achievement-tag">Community Initiatives</span>
-                            <span class="achievement-tag">Sustainability Leadership</span>
+                            Engaged minds from higher learning institutions across the cosmic network on Sustainable Development Goals. Built foundational frameworks for sustainability advocacy and climate action, understanding that our planet is but one precious celestial body in an infinite universe that requires careful stewardship.
                         </div>
                     </div>
                 </div>
@@ -812,36 +851,110 @@
     <!-- Projects Section -->
     <section class="section" id="projects">
         <div class="container">
-            <h2 class="section-title">Impact Projects</h2>
+            <h2 class="section-title">Key Projects</h2>
             <div class="projects-grid">
                 <div class="project-card">
-                    <h3 style="color: #00ff88; margin-bottom: 1rem;">Rwanda Public Health Emergency Management System</h3>
-                    <p>Revolutionized emergency response with real-time ambulance dispatch using ArcGIS Mission Manager, achieving 30% reduction in response times.</p>
+                    <h3 class="project-title">Kigali Ambulance Emergency Response System</h3>
+                    <div class="project-impact">Emergency Response Optimization</div>
+                    <p class="project-description">Designed and implemented a real-time emergency response system using ArcGIS Mission Manager, reducing ambulance dispatch times by 80% across Kigali's metropolitan area through automated routing and resource allocation.</p>
+                    <div class="project-stats">
+                        <span class="project-stat">80% Response Time Reduction</span>
+                        <span class="project-stat">50+ Healthcare Personnel Trained</span>
+                        <span class="project-stat">Real-time Tracking System</span>
+                    </div>
                 </div>
                 
                 <div class="project-card">
-                    <h3 style="color: #00ff88; margin-bottom: 1rem;">Kigali Master Plan Compliance Monitoring</h3>
-                    <p>Implemented satellite imagery analysis and GIS change detection models to monitor urban development compliance across Rwanda's capital.</p>
+                    <h3 class="project-title">City of Kigali AI Building Detection</h3>
+                    <div class="project-impact">First AI Compliance System in Rwanda</div>
+                    <p class="project-description">Developed Rwanda's first AI-powered building detection system using satellite imagery and deep learning models to monitor urban development compliance with 95% accuracy for the City of Kigali.</p>
+                    <div class="project-stats">
+                        <span class="project-stat">95% Detection Accuracy</span>
+                        <span class="project-stat">20+ City Inspectors Trained</span>
+                        <span class="project-stat">AI Technology Implementation</span>
+                    </div>
                 </div>
                 
                 <div class="project-card">
-                    <h3 style="color: #00ff88; margin-bottom: 1rem;">Virunga National Park GIS System</h3>
-                    <p>Developed comprehensive GIS solutions for Africa's oldest national park, supporting conservation efforts and wildlife monitoring.</p>
+                    <h3 class="project-title">Rwanda Mining Board Enterprise System</h3>
+                    <div class="project-impact">National Mining Management Platform</div>
+                    <p class="project-description">Implemented comprehensive digital mining permit management system using ArcGIS Enterprise, reducing processing times by 77% and training 50+ mining board personnel in digital workflows.</p>
+                    <div class="project-stats">
+                        <span class="project-stat">77% Processing Time Reduction</span>
+                        <span class="project-stat">50+ Personnel Trained</span>
+                        <span class="project-stat">National Implementation</span>
+                    </div>
                 </div>
                 
                 <div class="project-card">
-                    <h3 style="color: #00ff88; margin-bottom: 1rem;">Urban Dynamic Mapping Framework</h3>
-                    <p>Created dynamic mapping solutions for urban planning and spatial development tracking across multiple cities.</p>
+                    <h3 class="project-title">Kigali Large Scale Mapping</h3>
+                    <div class="project-impact">Comprehensive Urban Mapping</div>
+                    <p class="project-description">Led large-scale mapping initiative for Rwanda's capital city, creating detailed spatial databases and establishing enterprise GIS standards for urban planning and development monitoring.</p>
+                    <div class="project-stats">
+                        <span class="project-stat">Complete City Coverage</span>
+                        <span class="project-stat">Enterprise GIS Standards</span>
+                        <span class="project-stat">Urban Planning Database</span>
+                    </div>
                 </div>
                 
                 <div class="project-card">
-                    <h3 style="color: #00ff88; margin-bottom: 1rem;">Rwanda Energy Grid Optimization</h3>
-                    <p>Provided capacity building for Rwanda Energy Group on utility network mapping and electricity infrastructure optimization.</p>
+                    <h3 class="project-title">Urban Dynamic Mapping - Bugesera District</h3>
+                    <div class="project-impact">District-Level Capacity Building</div>
+                    <p class="project-description">Developed dynamic urban mapping system and trained 60+ district personnel, enabling real-time monitoring and establishing self-sufficient GIS operations at the district level.</p>
+                    <div class="project-stats">
+                        <span class="project-stat">60+ District Personnel Trained</span>
+                        <span class="project-stat">Real-time Monitoring</span>
+                        <span class="project-stat">Self-Sufficient Operations</span>
+                    </div>
                 </div>
                 
                 <div class="project-card">
-                    <h3 style="color: #00ff88; margin-bottom: 1rem;">Kigali Large Scale Mapping</h3>
-                    <p>Executed comprehensive mapping project for Rwanda's capital, creating detailed spatial databases for urban planning.</p>
+                    <h3 class="project-title">Green Gicumbi Environmental Monitoring</h3>
+                    <div class="project-impact">Environmental Project Tracking</div>
+                    <p class="project-description">Implemented comprehensive environmental project mapping using ArcGIS StoryMaps and Experience Builder, enhancing monitoring capabilities for regional environmental initiatives.</p>
+                    <div class="project-stats">
+                        <span class="project-stat">Environmental Monitoring</span>
+                        <span class="project-stat">15+ Specialists Trained</span>
+                        <span class="project-stat">Regional Implementation</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Training Section -->
+    <section class="section" id="training">
+        <div class="container">
+            <h2 class="section-title">Training Programs</h2>
+            <div class="training-programs">
+                <div class="training-program">
+                    <h3 class="program-name">National Intelligence & Security Systems (NISS)</h3>
+                    <div class="program-participants">20 Intelligence Officers Trained</div>
+                    <p class="program-description">Established spatial intelligence capabilities for national security operations, training officers in advanced GIS analysis and security mapping protocols.</p>
+                </div>
+                
+                <div class="training-program">
+                    <h3 class="program-name">Defense & Air Force Command Centers</h3>
+                    <div class="program-participants">76 Military Personnel (Including Colonels & Majors)</div>
+                    <p class="program-description">Built GIS capabilities across DRD, Air Defense Kucukiro, Air Force Staff HQ, and Defense Intelligence, training high-ranking officers in strategic spatial analysis.</p>
+                </div>
+                
+                <div class="training-program">
+                    <h3 class="program-name">Rwanda Space Agency</h3>
+                    <div class="program-participants">6 Space Technology Specialists</div>
+                    <p class="program-description">Enhanced space-based GIS capabilities through satellite data integration training, connecting terrestrial mapping with space observation technologies.</p>
+                </div>
+                
+                <div class="training-program">
+                    <h3 class="program-name">National Institute of Statistics (NISR)</h3>
+                    <div class="program-participants">12 Statistical Officers</div>
+                    <p class="program-description">Advanced spatial statistics and demographic analysis training, enabling census mapping and national demographic monitoring capabilities.</p>
+                </div>
+                
+                <div class="training-program">
+                    <h3 class="program-name">Cross-Border Networks</h3>
+                    <div class="program-participants">14 Regional Development Officers</div>
+                    <p class="program-description">Extended training programs to IFDC Burundi and agricultural development networks, creating an interconnected spatial intelligence network across East Africa.</p>
                 </div>
             </div>
         </div>
@@ -850,60 +963,48 @@
     <!-- Certifications Section -->
     <section class="section" id="certifications">
         <div class="container">
-            <h2 class="section-title">Professional Certifications</h2>
-            <div class="cert-grid">
-                <div class="cert-card">
-                    <div class="cert-badge">
-                        <img src="egdb.png" alt="Enterprise Geodata Management Professional Badge" />
-                    </div>
-                    <h3 style="color: #00ff88; margin-bottom: 0.5rem;">Enterprise Geodata Management Professional</h3>
-                    <p style="opacity: 0.7; margin-bottom: 0.5rem;">Esri - 2024</p>
-                    <a href="https://www.credly.com/badges/c04b7892-09fd-46b7-88f8-67871ec8f056/public_url" target="_blank" style="color: #00d4ff; text-decoration: none;">View Certificate →</a>
+            <h2 class="section-title">Professional Constellation</h2>
+            <div class="cert-constellation">
+                <div class="cert-star">
+                    <div class="cert-badge">🏛️</div>
+                    <h3 class="cert-title">Enterprise Geodata Management Professional</h3>
+                    <p class="cert-issuer">Esri - 2025</p>
+                    <p>Master architect of enterprise spatial data ecosystems</p>
                 </div>
                 
-                <div class="cert-card">
-                    <div class="cert-badge">
-                        <img src="arcgis-pro-associate.png" alt="ArcGIS Pro Associate Badge" />
-                    </div>
-                    <h3 style="color: #00ff88; margin-bottom: 0.5rem;">ArcGIS Pro Associate</h3>
-                    <p style="opacity: 0.7; margin-bottom: 0.5rem;">Esri - 2023</p>
-                    <a href="https://www.credly.com/badges/8bf29950-af81-401e-bdaa-9d2320537be1/public_url" target="_blank" style="color: #00d4ff; text-decoration: none;">View Certificate →</a>
+                <div class="cert-star">
+                    <div class="cert-badge">🗺️</div>
+                    <h3 class="cert-title">ArcGIS Pro Associate</h3>
+                    <p class="cert-issuer">Esri - 2023</p>
+                    <p>Advanced spatial analysis and cartographic intelligence</p>
                 </div>
                 
-                <div class="cert-card">
-                    <div class="cert-badge">
-                        <img src="datanalytics.png" alt="Google Advanced Data Analytics Badge" />
-                    </div>
-                    <h3 style="color: #00ff88; margin-bottom: 0.5rem;">Google Advanced Data Analytics</h3>
-                    <p style="opacity: 0.7; margin-bottom: 0.5rem;">Google - 2023</p>
-                    <a href="https://www.credly.com/badges/ea424ea6-e1df-4735-8043-bb4c0348d896/public_url" target="_blank" style="color: #00d4ff; text-decoration: none;">View Certificate →</a>
+                <div class="cert-star">
+                    <div class="cert-badge">📊</div>
+                    <h3 class="cert-title">Google Advanced Data Analytics</h3>
+                    <p class="cert-issuer">Google - 2023</p>
+                    <p>Data science and analytics across multiple dimensions</p>
                 </div>
                 
-                <div class="cert-card">
-                    <div class="cert-badge">
-                        <img src="sql.png" alt="IBM SQL Badge" />
-                    </div>
-                    <h3 style="color: #00ff88; margin-bottom: 0.5rem;">Databases and SQL for Data Science</h3>
-                    <p style="opacity: 0.7; margin-bottom: 0.5rem;">IBM - 2023</p>
-                    <a href="https://www.credly.com/badges/ce9bb6a1-0f44-4dfc-9c03-8305c43f0e1c/public_url" target="_blank" style="color: #00d4ff; text-decoration: none;">View Certificate →</a>
+                <div class="cert-star">
+                    <div class="cert-badge">🗄️</div>
+                    <h3 class="cert-title">Databases & SQL for Data Science</h3>
+                    <p class="cert-issuer">IBM - 2023</p>
+                    <p>Database architecture and spatial data management</p>
                 </div>
                 
-                <div class="cert-card">
-                    <div class="cert-badge">
-                        <img src="GCC_badge_PGM_1000x1000.png" alt="Google Project Management Badge" />
-                    </div>
-                    <h3 style="color: #00ff88; margin-bottom: 0.5rem;">Google Project Management</h3>
-                    <p style="opacity: 0.7; margin-bottom: 0.5rem;">Google - 2023</p>
-                    <a href="https://www.credly.com/badges/d9590483-ff37-49ac-928e-bef047c7399d/public_url" target="_blank" style="color: #00d4ff; text-decoration: none;">View Certificate →</a>
+                <div class="cert-star">
+                    <div class="cert-badge">⚡</div>
+                    <h3 class="cert-title">Google Project Management</h3>
+                    <p class="cert-issuer">Google - 2023</p>
+                    <p>Complex project orchestration and team coordination</p>
                 </div>
                 
-                <div class="cert-card">
-                    <div class="cert-badge">
-                        <img src="blob.png" alt="PMI Generative AI Badge" />
-                    </div>
-                    <h3 style="color: #00ff88; margin-bottom: 0.5rem;">Generative AI for Project Managers</h3>
-                    <p style="opacity: 0.7; margin-bottom: 0.5rem;">PMI - 2024</p>
-                    <a href="https://www.credly.com/badges/7e8cc279-1162-4898-a830-64f1522c3b97/public_url" target="_blank" style="color: #00d4ff; text-decoration: none;">View Certificate →</a>
+                <div class="cert-star">
+                    <div class="cert-badge">🤖</div>
+                    <h3 class="cert-title">Generative AI for Project Managers</h3>
+                    <p class="cert-issuer">PMI - 2024</p>
+                    <p>AI integration in project management and spatial intelligence</p>
                 </div>
             </div>
         </div>
@@ -912,43 +1013,75 @@
     <!-- Contact Section -->
     <section class="section" id="contact">
         <div class="container">
-            <h2 class="section-title">Let's Connect</h2>
-            <div class="contact-grid">
-                <a href="mailto:gilbertuwonkundaa@gmail.com" class="contact-item">
-                    <div class="GMAIL.png">✉️</div>
-                    <h3>Email</h3>
+            <h2 class="section-title">Connect Across the Cosmos</h2>
+            <div class="contact-constellation">
+                <a href="mailto:gilbertuwonkundaa@gmail.com" class="contact-star">
+                    <div class="contact-icon">📧</div>
+                    <h3>Interstellar Communication</h3>
                     <p>gilbertuwonkundaa@gmail.com</p>
                 </a>
                 
-                <a href="tel:+250781602046" class="contact-item">
+                <a href="tel:+250781602046" class="contact-star">
                     <div class="contact-icon">📱</div>
-                    <h3>Phone</h3>
+                    <h3>Direct Transmission</h3>
                     <p>+250 781 602 046</p>
                 </a>
                 
-                <a href="https://linkedin.com/in/gilbert-uwonkunda-8bb621198" target="_blank" class="contact-item">
-                    <div class="linkedin_logo.jpg">🔗</div>
-                    <h3>LinkedIn</h3>
+                <a href="https://linkedin.com/in/gilbert-uwonkunda-8bb621198" target="_blank" class="contact-star">
+                    <div class="contact-icon">🔗</div>
+                    <h3>Professional Network</h3>
                     <p>gilbert-uwonkunda</p>
                 </a>
                 
-                <a href="https://twitter.com/TheeBeatit" target="_blank" class="contact-item">
-                    <div class="X.jpg">✖️</div>
-                    <h3>X (Twitter)</h3>
+                <a href="https://twitter.com/TheeBeatit" target="_blank" class="contact-star">
+                    <div class="contact-icon">✖️</div>
+                    <h3>Cosmic Updates</h3>
                     <p>@TheeBeatit</p>
                 </a>
                 
-                <div class="contact-item">
+                <div class="contact-star">
                     <div class="contact-icon">🌍</div>
-                    <h3>Location</h3>
-                    <p>Kigali, Rwanda</p>
+                    <h3>Home Base</h3>
+                    <p>Kigali, Rwanda<br>East Africa Sector</p>
                 </div>
             </div>
         </div>
     </section>
 
     <script>
-        // Custom cursor
+        // Create cosmic background
+        function createStars() {
+            const starsContainer = document.querySelector('.stars');
+            const starCount = 150;
+            
+            for (let i = 0; i < starCount; i++) {
+                const star = document.createElement('div');
+                star.className = 'star';
+                star.style.left = Math.random() * 100 + '%';
+                star.style.top = Math.random() * 100 + '%';
+                star.style.width = Math.random() * 3 + 1 + 'px';
+                star.style.height = star.style.width;
+                star.style.animationDelay = Math.random() * 3 + 's';
+                star.style.animationDuration = (Math.random() * 3 + 2) + 's';
+                starsContainer.appendChild(star);
+            }
+        }
+
+        // Create shooting stars
+        function createShootingStar() {
+            const shootingStar = document.createElement('div');
+            shootingStar.className = 'shooting-star';
+            shootingStar.style.left = Math.random() * 100 + '%';
+            shootingStar.style.top = Math.random() * 100 + '%';
+            shootingStar.style.animationDuration = (Math.random() * 2 + 2) + 's';
+            document.body.appendChild(shootingStar);
+            
+            setTimeout(() => {
+                shootingStar.remove();
+            }, 4000);
+        }
+
+        // Custom cosmic cursor
         const cursor = document.querySelector('.cursor');
         const cursorTrails = [];
         
@@ -956,7 +1089,7 @@
             cursor.style.left = e.clientX + 'px';
             cursor.style.top = e.clientY + 'px';
             
-            // Create trail effect
+            // Create cosmic trail
             const trail = document.createElement('div');
             trail.className = 'cursor-trail';
             trail.style.left = e.clientX + 'px';
@@ -968,99 +1101,16 @@
             setTimeout(() => {
                 trail.remove();
                 cursorTrails.shift();
-            }, 300);
+            }, 400);
         });
 
-        // Animated background
-        const canvas = document.querySelector('.background-canvas');
-        const ctx = canvas.getContext('2d');
-        
-        function resizeCanvas() {
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
-        }
-        
-        resizeCanvas();
-        window.addEventListener('resize', resizeCanvas);
-        
-        // Particle system
-        const particles = [];
-        
-        class Particle {
-            constructor() {
-                this.x = Math.random() * canvas.width;
-                this.y = canvas.height + 10;
-                this.vx = (Math.random() - 0.5) * 2;
-                this.vy = -Math.random() * 3 - 1;
-                this.life = 1;
-                this.decay = Math.random() * 0.02 + 0.005;
-            }
-            
-            update() {
-                this.x += this.vx;
-                this.y += this.vy;
-                this.life -= this.decay;
-            }
-            
-            draw() {
-                ctx.save();
-                ctx.globalAlpha = this.life;
-                ctx.fillStyle = '#00ff88';
-                ctx.fillRect(this.x, this.y, 2, 2);
-                ctx.restore();
-            }
-        }
-        
-        function animate() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            
-            // Add new particles
-            if (Math.random() < 0.1) {
-                particles.push(new Particle());
-            }
-            
-            // Update and draw particles
-            for (let i = particles.length - 1; i >= 0; i--) {
-                const particle = particles[i];
-                particle.update();
-                particle.draw();
-                
-                if (particle.life <= 0) {
-                    particles.splice(i, 1);
-                }
-            }
-            
-            // Draw connecting lines
-            ctx.strokeStyle = 'rgba(0, 255, 136, 0.1)';
-            ctx.lineWidth = 1;
-            
-            for (let i = 0; i < particles.length; i++) {
-                for (let j = i + 1; j < particles.length; j++) {
-                    const dx = particles[i].x - particles[j].x;
-                    const dy = particles[i].y - particles[j].y;
-                    const distance = Math.sqrt(dx * dx + dy * dy);
-                    
-                    if (distance < 100) {
-                        ctx.beginPath();
-                        ctx.moveTo(particles[i].x, particles[i].y);
-                        ctx.lineTo(particles[j].x, particles[j].y);
-                        ctx.stroke();
-                    }
-                }
-            }
-            
-            requestAnimationFrame(animate);
-        }
-        
-        animate();
-        
-        // Smooth scrolling
+        // Smooth cosmic scrolling
         function scrollToSection(sectionId) {
             const element = document.getElementById(sectionId);
             element.scrollIntoView({ behavior: 'smooth' });
         }
-        
-        // Navigation highlighting
+
+        // Navigation constellation highlighting
         const sections = document.querySelectorAll('.section');
         const navItems = document.querySelectorAll('.nav-item');
         
@@ -1068,141 +1118,72 @@
             let current = '';
             sections.forEach(section => {
                 const sectionTop = section.offsetTop;
-                const sectionHeight = section.clientHeight;
-                if (pageYOffset >= sectionTop - 200) {
+                if (pageYOffset >= sectionTop - 300) {
                     current = section.getAttribute('id');
                 }
             });
             
-            navItems.forEach(item => {
+            navItems.forEach((item, index) => {
                 item.classList.remove('active');
-                if (item.getAttribute('data-section').toLowerCase() === current || 
-                    (current === 'hero' && item.getAttribute('data-section') === 'Hero')) {
+                const sectionMap = ['hero', 'about', 'experience', 'projects', 'training', 'certifications', 'contact'];
+                if (sectionMap[index] === current) {
                     item.classList.add('active');
                 }
             });
         });
-        
-        // Skill bubble interactions
-        const skillBubbles = document.querySelectorAll('.skill-bubble');
-        skillBubbles.forEach(bubble => {
-            bubble.addEventListener('click', function() {
-                // Create ripple effect
-                const ripple = document.createElement('div');
-                ripple.style.position = 'absolute';
-                ripple.style.width = '20px';
-                ripple.style.height = '20px';
-                ripple.style.background = 'rgba(0, 255, 136, 0.5)';
-                ripple.style.borderRadius = '50%';
-                ripple.style.pointerEvents = 'none';
-                ripple.style.left = '50%';
-                ripple.style.top = '50%';
-                ripple.style.transform = 'translate(-50%, -50%)';
-                ripple.style.animation = 'ripple 0.6s ease-out';
-                
-                this.appendChild(ripple);
-                
-                setTimeout(() => {
-                    ripple.remove();
-                }, 600);
-            });
-        });
-        
-        // Add ripple animation
-        const style = document.createElement('style');
-        style.textContent = `
-            @keyframes ripple {
-                0% {
-                    transform: translate(-50%, -50%) scale(0);
-                    opacity: 1;
-                }
-                100% {
-                    transform: translate(-50%, -50%) scale(4);
-                    opacity: 0;
-                }
-            }
-        `;
-        document.head.appendChild(style);
-        
-        // Intersection Observer for animations
+
+        // Cosmic intersection observer
         const observerOptions = {
             threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
+            rootMargin: '0px 0px -100px 0px'
         };
         
-        const observer = new IntersectionObserver((entries) => {
+        const cosmicObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
+                    entry.target.style.transform = 'translateY(0) scale(1)';
                 }
             });
         }, observerOptions);
-        
-        // Observe all cards and timeline items
-        document.querySelectorAll('.project-card, .cert-card, .timeline-item, .contact-item').forEach(el => {
-            el.style.opacity = '0';
-            el.style.transform = 'translateY(50px)';
-            el.style.transition = 'all 0.6s ease';
-            observer.observe(el);
-        });
 
-        // Enhanced timeline animation
+        // Timeline cosmic animation
         const timelineObserver = new IntersectionObserver((entries) => {
             entries.forEach((entry, index) => {
                 if (entry.isIntersecting) {
                     setTimeout(() => {
                         entry.target.classList.add('animate-in');
-                    }, index * 200);
+                    }, index * 300);
                 }
             });
-        }, { threshold: 0.3 });
+        }, { threshold: 0.2 });
+
+        // Observe cosmic elements
+        document.querySelectorAll('.project-star, .training-galaxy, .cert-star, .timeline-item, .contact-star, .stat-item').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(60px) scale(0.8)';
+            el.style.transition = 'all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
+            cosmicObserver.observe(el);
+        });
 
         document.querySelectorAll('.timeline-item').forEach(item => {
             timelineObserver.observe(item);
         });
-        
-        // Mouse parallax effect
+
+        // Cosmic parallax mouse effect
         document.addEventListener('mousemove', (e) => {
             const mouseX = e.clientX / window.innerWidth;
             const mouseY = e.clientY / window.innerHeight;
             
-            // Parallax effect on floating elements
-            document.querySelectorAll('.skill-bubble').forEach((bubble, index) => {
-                const speed = (index % 3 + 1) * 0.5;
-                const x = (mouseX - 0.5) * speed * 20;
-                const y = (mouseY - 0.5) * speed * 20;
-                bubble.style.transform = `translate(${x}px, ${y}px)`;
-            });
+            // Parallax nebula
+            const nebula = document.querySelector('.nebula');
+            const x = (mouseX - 0.5) * 30;
+            const y = (mouseY - 0.5) * 30;
+            nebula.style.transform = `translate(${x}px, ${y}px) rotate(${x * 0.1}deg)`;
         });
-        
-        // Typewriter effect for hero title
-        function typeWriter(element, text, speed = 100) {
-            let i = 0;
-            element.style.opacity = '0';
-            element.textContent = '';
-            
-            setTimeout(() => {
-                element.style.opacity = '1';
-                function type() {
-                    if (i < text.length) {
-                        element.textContent += text.charAt(i);
-                        i++;
-                        setTimeout(type, speed);
-                    }
-                }
-                type();
-            }, 500);
-        }
-        
-        // Initialize typewriter when page loads
-        window.addEventListener('load', () => {
-            const heroTitle = document.querySelector('.hero-title');
-            typeWriter(heroTitle, 'GILBERT UWONKUNDA', 80);
-        });
-        
-        // Add 3D tilt effect to project cards
-        document.querySelectorAll('.project-card, .cert-card').forEach(card => {
+
+        // 3D cosmic tilt effect
+        document.querySelectorAll('.project-star, .cert-star, .training-galaxy').forEach(card => {
             card.addEventListener('mousemove', (e) => {
                 const rect = card.getBoundingClientRect();
                 const x = e.clientX - rect.left;
@@ -1211,74 +1192,127 @@
                 const centerX = rect.width / 2;
                 const centerY = rect.height / 2;
                 
-                const rotateX = (y - centerY) / 10;
-                const rotateY = (centerX - x) / 10;
+                const rotateX = (y - centerY) / 15;
+                const rotateY = (centerX - x) / 15;
                 
-                card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateZ(10px)`;
+                card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateZ(20px)`;
             });
             
             card.addEventListener('mouseleave', () => {
                 card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) translateZ(0)';
             });
         });
-        
-        // Hide scroll indicator after scrolling
+
+        // Hide cosmic scroll indicator
         window.addEventListener('scroll', () => {
-            const scrollIndicator = document.querySelector('.scroll-indicator');
-            if (window.scrollY > 100) {
-                scrollIndicator.style.opacity = '0';
+            const cosmicScroll = document.querySelector('.cosmic-scroll');
+            if (window.scrollY > 150) {
+                cosmicScroll.style.opacity = '0';
+                cosmicScroll.style.transform = 'translateX(-50%) translateY(20px)';
             } else {
-                scrollIndicator.style.opacity = '0.7';
+                cosmicScroll.style.opacity = '0.8';
+                cosmicScroll.style.transform = 'translateX(-50%) translateY(0)';
             }
         });
-        
-        // Add clicking sound effect (using Web Audio API)
+
+        // Initialize cosmic environment
+        window.addEventListener('load', () => {
+            createStars();
+            
+            // Create periodic shooting stars
+            setInterval(createShootingStar, 3000);
+            
+            // Cosmic typewriter effect
+            const heroTitle = document.querySelector('.hero-title');
+            const text = 'GILBERT UWONKUNDA';
+            let i = 0;
+            
+            heroTitle.style.opacity = '0';
+            heroTitle.textContent = '';
+            
+            setTimeout(() => {
+                heroTitle.style.opacity = '1';
+                function typeCosmicText() {
+                    if (i < text.length) {
+                        heroTitle.textContent += text.charAt(i);
+                        i++;
+                        setTimeout(typeCosmicText, 100);
+                    }
+                }
+                typeCosmicText();
+            }, 800);
+        });
+
+        // Cosmic audio (optional)
         const audioContext = new (window.AudioContext || window.webkitAudioContext)();
         
-        function playClickSound() {
+        function playCosmicSound(frequency = 800) {
             const oscillator = audioContext.createOscillator();
             const gainNode = audioContext.createGain();
             
             oscillator.connect(gainNode);
             gainNode.connect(audioContext.destination);
             
-            oscillator.frequency.value = 800;
+            oscillator.frequency.value = frequency;
             oscillator.type = 'sine';
             
-            gainNode.gain.setValueAtTime(0.1, audioContext.currentTime);
-            gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.1);
+            gainNode.gain.setValueAtTime(0.05, audioContext.currentTime);
+            gainNode.gain.exponentialRampToValueAtTime(0.001, audioContext.currentTime + 0.3);
             
             oscillator.start(audioContext.currentTime);
-            oscillator.stop(audioContext.currentTime + 0.1);
+            oscillator.stop(audioContext.currentTime + 0.3);
         }
-        
-        // Add click sound to interactive elements
-        document.querySelectorAll('.nav-item, .skill-bubble, .project-card, .cert-card').forEach(el => {
-            el.addEventListener('click', playClickSound);
+
+        // Add cosmic sounds to interactions
+        document.querySelectorAll('.nav-item, .project-star, .cert-star').forEach(el => {
+            el.addEventListener('click', () => playCosmicSound(Math.random() * 400 + 600));
         });
-        
-        // Performance optimization - throttle scroll events
-        let ticking = false;
-        
-        function updateScrollEffects() {
-            // Update parallax and other scroll effects here
-            ticking = false;
-        }
-        
-        function requestTick() {
-            if (!ticking) {
-                requestAnimationFrame(updateScrollEffects);
-                ticking = true;
-            }
-        }
-        
-        window.addEventListener('scroll', requestTick);
-        
-        // Disable custom cursor on touch devices
+
+        // Performance optimization for mobile
         if ('ontouchstart' in window) {
             document.body.style.cursor = 'default';
             document.querySelector('.cursor').style.display = 'none';
+            document.querySelectorAll('.cursor-trail').forEach(el => el.style.display = 'none');
+        }
+
+        // Reduce animations on low-performance devices
+        if (navigator.hardwareConcurrency && navigator.hardwareConcurrency < 4) {
+            document.querySelectorAll('.nebula, .floating-element').forEach(el => {
+                el.style.animation = 'none';
+            });
         }
     </script>
 </body>
-</html>
+</html>">January 2025 - Present Stardate</div>
+                            </div>
+                        </div>
+                        <div class="job-description">
+                            Leading the orchestration of advanced spatial intelligence across East Africa's digital cosmos. Like a space station commander, I coordinate complex systems that transform raw geospatial data into life-saving solutions, emergency response networks, and urban planning algorithms that operate with the precision of celestial mechanics.
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="experience-card">
+                        <div class="job-header">
+                            <div class="job-icon">🌍</div>
+                            <div class="job-details">
+                                <h3 class="job-title">GIS Systems Navigator</h3>
+                                <h4 class="company">Esri Rwanda - Spatial Observatory</h4>
+                                <div class="duration">June 2022 - December 2024</div>
+                            </div>
+                        </div>
+                        <div class="job-description">
+                            Served as chief navigator of comprehensive GIS solutions across Rwanda, Burundi, and DRC. Specialized in satellite constellation analysis for urban development monitoring and Master Plan compliance using cutting-edge technologies that function like astronomical instruments scanning the urban landscape.
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="experience-card">
+                        <div class="job-header">
+                            <div class="job-icon">🌱</div>
+                            <div class="job-details">
+                                <h3 class="job-title">Sustainability Mission Coordinator</h3>
+                                <h4 class="company">SDSN Youth - Planetary Stewardship</h4>
+                                <div class="duration
